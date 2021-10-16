@@ -8,7 +8,7 @@ on:
 jobs:
   tx-update:
     runs-on: ubuntu-latest
-    container: citraemu/build-envirionments:linux-transifex
+    container: citraemu/build-environments:linux-transifex
     steps:
       - uses: actions/checkout@v2
       - name: Set up Transifex client
