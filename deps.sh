@@ -1,5 +1,7 @@
 #!/bin/bash -e
 
+pip3 install transifex-client
+
 # Setup RC file for tx
 cat << EOF > ~/.transifexrc
 [https://www.transifex.com]
