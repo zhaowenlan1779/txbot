@@ -15,6 +15,6 @@ jobs:
         env:
           TRANSIFEX_API_TOKEN: ${{ secrets.TRANSIFEX_API_TOKEN }}
       - name: Pull and PR Translations
-        run: ./txbot-yuzu.rb execute
+        run: ruby -r ./txbot-yuzu.rb execute
         env:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
