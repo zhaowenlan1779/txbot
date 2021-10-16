@@ -16,6 +16,6 @@ jobs:
         env:
           TRANSIFEX_API_TOKEN: ${{ secrets.TRANSIFEX_API_TOKEN }}
       - name: Pull and PR Translations
-        run: ./txbot-citra.rb
+        run: ruby -r ./txbot-citra.rb
         env:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
