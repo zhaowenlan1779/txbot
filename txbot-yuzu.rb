@@ -92,7 +92,7 @@ when "execute"
     puts "Pushing..."
     execute "git push origin #{branch}"
     puts "Creating pull request..."
-    # GithubAPI::post("/repos/#{UPSTREAM}/pulls", {"title" => title, "head" => "#{USERNAME}:#{branch}", "base" => "master"}.to_json)
+    GithubAPI::post("/repos/#{UPSTREAM}/pulls", {"title" => title, "body" => BODY, "head" => "#{USERNAME}:#{branch}", "base" => "master"}.to_json)
     puts "All done!"
 else
     puts "Unknown command!"
