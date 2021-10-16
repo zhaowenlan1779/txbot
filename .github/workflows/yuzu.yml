@@ -11,6 +11,9 @@ jobs:
     container: citraemu/build-environments:linux-transifex
     steps:
       - uses: actions/checkout@v2
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.7
       - name: Set up Transifex client
         run: ./deps.sh
         env:
