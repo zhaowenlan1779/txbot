@@ -14,11 +14,10 @@ jobs:
       - uses: webfactory/ssh-agent@v0.5.3
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-      - name: Set up Transifex client
+      - name: Set up dependencies
         run: ./deps.sh
-        env:
-          TRANSIFEX_API_TOKEN: ${{ secrets.TRANSIFEX_API_TOKEN }}
       - name: Pull and PR Translations
-        run: ./txbot-citra.rb execute
+        run: ./txbot-yuzu.rb execute
         env:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+          TX_TOKEN: ${{ secrets.TRANSIFEX_API_TOKEN }}
