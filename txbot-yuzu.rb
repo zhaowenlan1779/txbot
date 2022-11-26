@@ -16,7 +16,7 @@ TOKEN = ENV["BOT_TOKEN"]
 
 #### Configuration
 REPO = "zhaobot/yuzu"
-UPSTREAM = "zhaowenlan1779/yuzu"
+UPSTREAM = "yuzu-emu/yuzu"
 REPO_PATH = "/home/runner/yuzu"
 TRANSLATIONS_PATH = "#{REPO_PATH}/dist/languages"
 AUTHOR = "The yuzu Community <noreply-fake@community.yuzu-emu.org>"
