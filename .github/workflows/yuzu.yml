@@ -22,3 +22,5 @@ jobs:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
           TX_TOKEN: ${{ secrets.TRANSIFEX_API_TOKEN }}
       - uses: gautamkrishnar/keepalive-workflow@v1
+        with:
+          time_elapsed: 30
