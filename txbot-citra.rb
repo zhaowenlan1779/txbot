@@ -83,7 +83,7 @@ when "execute"
     execute "tx status", TRANSLATIONS_PATH
     puts "Pulling translations..."
     execute "rm --interactive=never *.ts", TRANSLATIONS_PATH
-    execute "tx pull -a --minimum-perc 47", TRANSLATIONS_PATH, true
+    execute "tx pull -t -a --minimum-perc 47", TRANSLATIONS_PATH, true
     puts "Committing..."
     execute "git status"
     title = "Update translations (#{Time.now.strftime("%Y-%m-%d")})"

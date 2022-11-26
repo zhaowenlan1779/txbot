@@ -8,6 +8,7 @@ on:
 jobs:
   tx-update:
     runs-on: ubuntu-latest
+    container: yuzuemu/build-environments:linux-transifex
     steps:
       - uses: actions/checkout@v2
       - uses: webfactory/ssh-agent@v0.5.3
