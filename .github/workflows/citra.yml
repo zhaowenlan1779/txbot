@@ -17,7 +17,7 @@ jobs:
       - name: Set up dependencies
         run: ./deps.sh
       - name: Pull and PR Translations
-        run: ./txbot-yuzu.rb execute
+        run: ./txbot-citra.rb execute
         env:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
           TX_TOKEN: ${{ secrets.TRANSIFEX_API_TOKEN }}
