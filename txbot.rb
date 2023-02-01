@@ -84,9 +84,9 @@ when "execute"
     execute "git commit -m \"#{title}\" --author \"#{AUTHOR}\""
     execute "git push origin #{branch}"
     puts "::endgroup::"
-    # puts "::group::Create pull request"
-    # GithubAPI::post("/repos/#{UPSTREAM}/pulls", {"title" => title, "body" => BODY, "head" => "#{USERNAME}:#{branch}", "base" => "master"}.to_json)
-    # puts "::endgroup::"
+    puts "::group::Create pull request"
+    GithubAPI::post("/repos/#{UPSTREAM}/pulls", {"title" => title, "body" => BODY, "head" => "#{USERNAME}:#{branch}", "base" => "master"}.to_json)
+    puts "::endgroup::"
     puts "All done!"
 else
     puts "Unknown command!"
