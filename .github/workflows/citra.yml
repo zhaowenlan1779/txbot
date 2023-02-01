@@ -21,6 +21,8 @@ jobs:
         env:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
           TX_TOKEN: ${{ secrets.TRANSIFEX_API_TOKEN }}
+      - name: (HACK) Manually set safe
+        run: git config --global --add safe.directory $GITHUB_WORKSPACE
       - uses: gautamkrishnar/keepalive-workflow@v1
         with:
           time_elapsed: 30
