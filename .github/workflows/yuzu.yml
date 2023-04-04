@@ -15,7 +15,7 @@ jobs:
         run: |
           apt-get install -y jq
           mkdir -p -m 0700 /home/runner/.ssh
-          curl --silent https://api.github.com/meta  | jq --raw-output '"github.com "+.ssh_keys[]' >> /home/runner/.ssh/known_hosts
+          curl --silent https://api.github.com/meta  | jq --raw-output '"github.com "+.ssh_keys[]' > /home/runner/.ssh/known_hosts
           chmod 600 /home/runner/.ssh/known_hosts
       - uses: webfactory/ssh-agent@v0.8.0
         with:
