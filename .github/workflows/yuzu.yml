@@ -12,12 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: "Add GitHub to the SSH known hosts file"
-        run: |
-          apt-get install -y jq
-          mkdir -p -m 0700 /home/runner/.ssh
-          curl --silent https://api.github.com/meta  | jq --raw-output '"github.com "+.ssh_keys[]' > /home/runner/.ssh/known_hosts
-          chmod 600 /home/runner/.ssh/known_hosts
-          cat /home/runner/.ssh/known_hosts
+        run: ./known_hosts.sh
       - uses: webfactory/ssh-agent@v0.8.0
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
