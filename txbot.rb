@@ -74,12 +74,12 @@ when "execute"
     puts "::endgroup::"
     puts "::group::Pull translations"
     execute "tx status", TRANSLATIONS_PATH
-    execute "rm --interactive=never *.ts", TRANSLATIONS_PATH
-    execute "tx pull -t -a --minimum-perc 47", TRANSLATIONS_PATH, true
+    execute "tx pull -f -t -a --minimum-perc 47", TRANSLATIONS_PATH, true
     puts "::endgroup::"
     puts "::group::Create commit"
     title = "Update translations (#{Time.now.strftime("%Y-%m-%d")})"
     execute "git add dist/languages/*.ts"
+    execute "git add src/android/app/src/main/res/values-*/strings.xml"
     execute "git status"
     execute "git commit -m \"#{title}\" --author \"#{AUTHOR}\""
     execute "git push origin #{branch}"
