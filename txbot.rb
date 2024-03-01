@@ -75,6 +75,7 @@ when "execute"
     puts "::group::Pull translations"
     execute "tx status", TRANSLATIONS_PATH
     execute "tx pull -f -t -a --minimum-perc 47", TRANSLATIONS_PATH, true
+    execute "sed -i 's/[ \t]*$//' dist/languages/*.ts src/android/app/src/main/res/values-*/strings.xml"
     puts "::endgroup::"
     puts "::group::Create commit"
     title = "Update translations (#{Time.now.strftime("%Y-%m-%d")})"
